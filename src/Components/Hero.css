@@ -27,40 +27,43 @@
   -webkit-background-clip: text;
 }
 
-.hero p{
-    width: 50%;
-    text-align: center;
-    font-size: 24px;
-    line-height: 40px;
+.hero p {
+  width: 50%;
+  text-align: center;
+  font-size: 24px;
+  line-height: 40px;
 }
 
-.hero-action{
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 50px;
+.hero-action {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 50px;
 }
 
-.hero-connect{
-    background: linear-gradient(264deg, #DF8909 -5.09%, #B415FF 106.28%);
-    padding: 25px 45px;
-    border-radius: 50px;
-    cursor: pointer;
+.hero-connect {
+  background: linear-gradient(264deg, #df8909 -5.09%, #b415ff 106.28%);
+  padding: 25px 45px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
-.hero-resume{
-    padding: 25px 75px;
-    border-radius: 50px;
-    border: 2px solid white;
-    cursor: pointer;
+.hero-connect:hover {
+  background-position: left center;
+  box-shadow: 0 0 15px rgba(223, 137, 9, 0.4), 0 0 25px rgba(180, 21, 255, 0.3);
 }
 
-.hero-connect:hover{
-    border: 2px solid white;
+.hero-resume {
+  padding: 25px 75px;
+  border-radius: 50px;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
-.hero-resume:hover{
-    border-color: #B415FF;
+.hero-resume:hover {
+  border-color: #b415ff;
 }
