@@ -21,7 +21,7 @@ export default function Hero() {
     };
   }, []);
   return (
-    <div className="hero">
+    <header className="hero">
       <img src={profile_pic} alt="Profile" className="profile-pic" />
       <h1>
         <span>I'm Riccardo Giordanella,</span><br /> a <span ref={el}></span><br /> developer based
@@ -35,6 +35,6 @@ export default function Hero() {
         <div className="hero-connect">Connect with me</div>
         <div className="hero-resume">View my resume</div>
       </div>
-    </div>
+    </header>
   );
 }

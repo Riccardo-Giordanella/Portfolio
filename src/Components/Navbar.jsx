@@ -3,7 +3,7 @@ import logo from '../assets/riccardo.png';
 
 export default function Navbar() {
   return (
-    <div className="navbar">
+    <nav className="navbar">
         <img src={logo} alt="Logo" className='logo' />
         <ul className="nav-menu">
             <li>Home</li>
@@ -13,6 +13,6 @@ export default function Navbar() {
             <li>Resume</li>
         </ul>
         <div className="nav-connect">Connect with me</div>
-    </div>
+    </nav>
   )
 }

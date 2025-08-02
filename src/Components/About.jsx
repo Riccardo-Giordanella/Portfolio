@@ -3,7 +3,7 @@ import profile_img from "../assets/riccardo_2.jpg";
 
 export default function About() {
   return (
-    <div className="about">
+    <section className="about">
       <div className="about-title">
         <h1>About me</h1>
       </div>
@@ -70,6 +70,6 @@ export default function About() {
           <p>HAPPY CLIENTS</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
