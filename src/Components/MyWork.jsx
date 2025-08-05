@@ -1,0 +1,20 @@
+import "./MyWork.css";
+import mywork_data from "../assets/mywork_data";
+import white_arrow from "../assets/white_arrow.png";
+
+export default function MyWork() {
+  return <section className="mywork">
+    <div className="mywork-title">
+        <h2>My latest work</h2>
+    </div>
+    <div className="mywork-container">
+    {mywork_data.map((work, index)=>{
+        return <img key={index} src={work.w_img} alt="Work image" />
+    })}
+    </div>
+    <div className="mywork-showmore">
+        <p>Show More</p>
+        <img src={white_arrow} alt="White arrow" />
+    </div>
+  </section>;
+}
