@@ -20,21 +20,21 @@ export default function Contact() {
               <p>riccardogiordanella10@gmail.com</p>
             </div>
             <div className="contact-detail">
-              <i class="fa-solid fa-phone"></i> <p>+39 0123456789</p>
+              <i className="fa-solid fa-phone"></i> <p>+39 0123456789</p>
             </div>
             <div className="contact-detail">
-              <i class="fa-solid fa-location-dot"></i>{" "}
+              <i className="fa-solid fa-location-dot"></i>{" "}
               <p>Italy, Vittoria(RG) 97019</p>
             </div>
           </div>
         </div>
         <form className="contact-right">
           <label htmlFor="name">Your Name</label>
-          <input type="text" name="name" placeholder="Enter your name" />
+          <input type="text" name="name" placeholder="Enter your name" id="name" autoComplete="name" />
           <label htmlFor="email">Your Email</label>
-          <input type="email" placeholder="Enter your email" name="email" />
+          <input type="email" placeholder="Enter your email" name="email" id="email" autoComplete="email" />
           <label htmlFor="message">Write your message here</label>
-          <textarea name="message" rows="8" placeholder="Enter your message" />
+          <textarea name="message" rows="8" placeholder="Enter your message" id="message" autoComplete="message" />
           <button type="submit" className="contact-submit">Submit</button>
         </form>
       </div>
