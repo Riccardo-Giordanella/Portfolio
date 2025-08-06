@@ -1,5 +1,6 @@
 import clickfood from "./clickfood.jpeg";
 import tictactoe from "./tictactoe.jpeg";
+import smartbook from "./smartbook.png";
 
 const mywork_data = [
   {
@@ -14,13 +15,8 @@ const mywork_data = [
   },
   {
     w_no: 3,
-    w_name: "Project Three",
-    w_img: null,
-  },
-  {
-    w_no: 4,
-    w_name: "Project Four",
-    w_img: null,
+    w_name: "Smart Book",
+    w_img: smartbook,
   },
 ];
 
