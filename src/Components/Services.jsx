@@ -4,7 +4,7 @@ import white_arrow from "../assets/white_arrow.png";
 
 export default function Services() {
   return (
-    <section className="services">
+    <section id="services" className="services">
       <div className="services-title">
         <h1>My Services</h1>
       </div>

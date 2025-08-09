@@ -3,7 +3,7 @@ import mywork_data from "../assets/mywork_data";
 import white_arrow from "../assets/white_arrow.png";
 
 export default function MyWork() {
-  return <section className="mywork">
+  return <section id="projects" className="mywork">
     <div className="mywork-title">
         <h2>My latest work</h2>
     </div>

@@ -3,7 +3,7 @@ import profile_img from "../assets/riccardo_2.jpg";
 
 export default function About() {
   return (
-    <section className="about">
+    <section id="about" className="about">
       <div className="about-title">
         <h1>About me</h1>
       </div>
