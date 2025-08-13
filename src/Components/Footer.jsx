@@ -13,7 +13,7 @@ export default function Footer() {
         </div>
         <div className="footer-top-right">
           <div className="footer-email-input">
-            <i class="fa-solid fa-user"></i>
+            <i className="fa-solid fa-user"></i>
             <input type="email" placeholder="Enter your email" />
           </div>
           <div className="footer-subscribe">Subscribe</div>

@@ -12,7 +12,7 @@ export default function Contact() {
   const onSubmit = async (event) => {
     event.preventDefault();
     setIsSubmitting(true);
-    setResult("Sending...");
+    setResult("Sending");
 
     const formData = new FormData(event.target);
     formData.append("access_key", "d6e1f5d4-f185-4b6e-8abd-31f670ec2438");
@@ -103,7 +103,15 @@ export default function Contact() {
             disabled={isSubmitting}
           >
             {isSubmitting ? (
-              <Hourglass size="40" bgOpacity="0.1" speed="1.75" color="white" />
+              <>
+                {result}{" "}
+                <Hourglass
+                  size="40"
+                  bgOpacity="0.1"
+                  speed="1.75"
+                  color="white"
+                />
+              </>
             ) : (
               "Submit"
             )}
