@@ -108,7 +108,7 @@
   font-weight: 500;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .about {
     gap: 80px;
     margin: 50px 70px;
