@@ -7,15 +7,27 @@ const SERVICES_DATA = [
   },
   {
     id: 2,
-    title: "UI/UX Design",
+    title: "Frontend Development",
     description:
-      "Designing intuitive user interfaces and enhancing user experience across digital products.",
+      "Creating visually engaging and user-friendly interfaces using HTML, CSS, JavaScript, and modern frameworks like React or Vue.",
   },
   {
     id: 3,
-    title: "SEO Optimization",
+    title: "Backend Development",
     description:
-      "Improving website visibility and search engine rankings through effective SEO strategies.",
+      "Developing robust server-side logic, APIs, and database integration using Laravel, or other backend technologies.",
+  },
+  {
+    id: 4,
+    title: "Website Optimization",
+    description:
+      "Improving website performance, loading speed, and SEO to enhance user experience and search engine visibility.",
+  },
+  {
+    id: 5,
+    title: "Responsive Design",
+    description:
+      "Ensuring websites look and function perfectly across all devices, from desktops to smartphones.",
   },
 ];
 

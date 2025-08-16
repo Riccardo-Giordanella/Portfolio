@@ -56,12 +56,16 @@ export default function Contact() {
             to connect and explore how we might work together.
           </p>
           <div className="contact-details">
-            <div className="contact-detail">
+            {/* <div className="contact-detail">
               <i className="fa-regular fa-envelope"></i>{" "}
               <p>riccardogiordanella10@gmail.com</p>
             </div>
             <div className="contact-detail">
               <i className="fa-solid fa-phone"></i> <p>+39 0123456789</p>
+            </div> */}
+            <div className="contact-detail">
+              <i class="fa-brands fa-linkedin" />
+              <a href="https://www.linkedin.com/in/riccardo-giordanella-173195197/" target="_blank">My linkedin profile</a>
             </div>
             <div className="contact-detail">
               <i className="fa-solid fa-location-dot"></i>{" "}

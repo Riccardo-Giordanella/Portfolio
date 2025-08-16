@@ -66,7 +66,7 @@ export default function About() {
         </div>
         <hr />
         <div className="about-achievement">
-          <h2>15+</h2>
+          <h2>2+</h2>
           <p>HAPPY CLIENTS</p>
         </div>
       </div>

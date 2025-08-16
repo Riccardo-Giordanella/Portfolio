@@ -37,7 +37,7 @@ export default function Hero() {
         <AnchorLink className="anchor-link" offset={50} href="#contact">
           <div className="hero-connect">Connect with me</div>
         </AnchorLink>
-        <div className="hero-resume">View my resume</div>
+        <a href="https://www.linkedin.com/in/riccardo-giordanella-173195197/" target="_blank"><div className="hero-resume">View my resume</div></a>
       </div>
     </header>
   );
