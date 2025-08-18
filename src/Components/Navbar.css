@@ -5,7 +5,7 @@
   margin: 20px 170px;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .logo {
@@ -70,19 +70,24 @@
     display: block !important;
     position: fixed;
     right: 30px;
+    top: 20px;
     font-size: 24px;
     cursor: pointer;
-    z-index: 3;
+    z-index: 1001;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   /* Icona chiudi */
   .nav-mob-close {
     display: block !important;
-    position: absolute;
-    top: 30px;
+    position: fixed;
+    top: 20px;
     right: 30px;
     font-size: 24px;
     cursor: pointer;
+    z-index: 1001;
   }
 
   .nav-menu {

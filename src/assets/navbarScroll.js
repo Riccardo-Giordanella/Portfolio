@@ -91,30 +91,37 @@ export default function setupNavbarScroll() {
     const isScrolled = window.scrollY > SCROLL_THRESHOLD;
     const isLargeScreen = window.innerWidth > 1024;
 
-    if (isScrolled && isLargeScreen) {
-      navbar?.classList.add("compact");
+    if (isLargeScreen) {
+      if (isScrolled) {
+        navbar?.classList.add("compact");
 
-      if (!navMenu?.classList.contains("open")) {
-        navMenu?.classList.add("fade-hide");
-        navMenu.style.pointerEvents = "none";
+        if (!navMenu?.classList.contains("open")) {
+          navMenu?.classList.add("fade-hide");
+          navMenu.style.pointerEvents = "none";
 
-        btnOpen?.classList.add("fade-show");
-        btnOpen.style.pointerEvents = "auto";
-        btnOpen.style.display = "inline-block";
-        btnOpen.style.opacity = "1";
-        btnOpen.style.visibility = "visible";
+          btnOpen?.classList.add("fade-show");
+          btnOpen.style.pointerEvents = "auto";
+          btnOpen.style.display = "inline-block";
+          btnOpen.style.opacity = "1";
+          btnOpen.style.visibility = "visible";
+        }
+      } else {
+        navbar?.classList.remove("compact");
+
+        navMenu?.classList.remove("fade-hide");
+        navMenu.style.pointerEvents = "";
+
+        btnOpen?.classList.remove("fade-show");
+        btnOpen.style.pointerEvents = "";
+        btnOpen.style.display = "none";
+        btnOpen.style.opacity = "0";
+        btnOpen.style.visibility = "hidden";
       }
     } else {
+      // 👇 Su mobile: non toccare lo stile dell’icona hamburger
       navbar?.classList.remove("compact");
-
       navMenu?.classList.remove("fade-hide");
       navMenu.style.pointerEvents = "";
-
-      btnOpen?.classList.remove("fade-show");
-      btnOpen.style.pointerEvents = "";
-      btnOpen.style.display = "none";
-      btnOpen.style.opacity = "0";
-      btnOpen.style.visibility = "hidden";
     }
 
     updateBackToTopVisibility();
