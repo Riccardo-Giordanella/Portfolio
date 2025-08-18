@@ -13,7 +13,21 @@ export default function MyWork() {
       </div>
       <div className="mywork-container">
         {mywork_data.map((work, index) => {
-          return <img key={index} src={work.w_img} alt="Work image" />;
+          return (
+            <div key={index} className="box">
+              <img src={work.w_img} alt="Work image" />
+              <div className="titicon">
+                <h2>{work.w_name}</h2>
+                {work.github && (
+                  <a href={work.github} target="_blank" rel="noopener noreferrer">
+                    <div className="circle" title="GitHub">
+                      <i class="fa-brands fa-github fa-lg"></i>
+                    </div>
+                  </a>
+                )}
+              </div>
+            </div>
+          );
         })}
       </div>
       <div

@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Hourglass } from "ldrs/react";
 import "ldrs/react/Hourglass.css";
+import white_arrow from "../assets/white_arrow.png";
 
 export default function Contact() {
   const [result, setResult] = useState("");
@@ -64,8 +65,21 @@ export default function Contact() {
               <i className="fa-solid fa-phone"></i> <p>+39 0123456789</p>
             </div> */}
             <div className="contact-detail">
-              <i class="fa-brands fa-linkedin" />
-              <a href="https://www.linkedin.com/in/riccardo-giordanella-173195197/" target="_blank">My linkedin profile</a>
+              <i className="fa-brands fa-linkedin" />
+              <a
+                href="https://www.linkedin.com/in/riccardo-giordanella-173195197/"
+                target="_blank"
+              >
+                My linkedin profile
+              <img src={white_arrow} alt="white arrow" />
+              </a>
+            </div>
+            <div className="contact-detail">
+              <i className="fa-brands fa-square-github" />
+              <a href="https://github.com/Riccardo-Giordanella" target="_blank">
+                My github profile
+              <img src={white_arrow} alt="white arrow" />
+              </a>
             </div>
             <div className="contact-detail">
               <i className="fa-solid fa-location-dot"></i>{" "}
