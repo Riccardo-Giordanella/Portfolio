@@ -63,56 +63,6 @@ export default function setupNavbarScroll() {
       transition: opacity 0.3s ease;
       z-index: 999;
     }
-    .offcanvas-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0,0,0,0.5);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      z-index: 1000;
-    }
-    .offcanvas-overlay.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .offcanvas-menu {
-      position: fixed;
-      top: 0;
-      right: -300px;
-      width: 300px;
-      height: 100vh;
-      background: #fff;
-      box-shadow: -4px 0 12px rgba(0,0,0,0.2);
-      transition: right 0.3s ease;
-      z-index: 1001;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .offcanvas-menu.active {
-      right: 0;
-    }
-    .offcanvas-close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 24px;
-      cursor: pointer;
-      background: none;
-      border: none;
-    }
-    .offcanvas-menu li {
-      list-style: none;
-      font-size: 18px;
-      padding: 10px 0;
-      border-bottom: 1px solid #eee;
-      cursor: pointer;
-    }
   `;
   document.head.appendChild(style);
 
@@ -136,49 +86,12 @@ export default function setupNavbarScroll() {
     }
   }
 
-  // 🧱 Off-canvas elements
-  const offcanvasOverlay = document.createElement("div");
-  offcanvasOverlay.className = "offcanvas-overlay";
-  document.body.appendChild(offcanvasOverlay);
-
-  const offcanvasMenu = document.createElement("ul");
-  offcanvasMenu.className = "offcanvas-menu";
-
-  const closeBtn = document.createElement("button");
-  closeBtn.className = "offcanvas-close";
-  closeBtn.innerHTML = "✕";
-  offcanvasMenu.appendChild(closeBtn);
-
-  // Copia i list item dalla nav-menu
-  const navItems = navMenu?.querySelectorAll("li");
-  navItems?.forEach(item => {
-    const clone = item.cloneNode(true);
-    offcanvasMenu.appendChild(clone);
-  });
-
-  document.body.appendChild(offcanvasMenu);
-
-  // 🎯 Eventi apertura/chiusura
-  btnOpen?.addEventListener("click", () => {
-    offcanvasOverlay.classList.add("active");
-    offcanvasMenu.classList.add("active");
-  });
-
-  closeBtn.addEventListener("click", () => {
-    offcanvasOverlay.classList.remove("active");
-    offcanvasMenu.classList.remove("active");
-  });
-
-  offcanvasOverlay.addEventListener("click", () => {
-    offcanvasOverlay.classList.remove("active");
-    offcanvasMenu.classList.remove("active");
-  });
-
   // 🔁 Aggiorna stato navbar
   function updateNavbarState() {
     const isScrolled = window.scrollY > SCROLL_THRESHOLD;
+    const isLargeScreen = window.innerWidth > 1024;
 
-    if (isScrolled) {
+    if (isScrolled && isLargeScreen) {
       navbar?.classList.add("compact");
 
       if (!navMenu?.classList.contains("open")) {
@@ -202,10 +115,6 @@ export default function setupNavbarScroll() {
       btnOpen.style.display = "none";
       btnOpen.style.opacity = "0";
       btnOpen.style.visibility = "hidden";
-
-      // Chiudi offcanvas se aperto
-      offcanvasOverlay.classList.remove("active");
-      offcanvasMenu.classList.remove("active");
     }
 
     updateBackToTopVisibility();
