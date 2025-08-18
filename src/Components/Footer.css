@@ -23,11 +23,13 @@
 
 .footer-email-input {
   display: flex;
-  gap: 30px;
-  padding: 20px 30px;
+  gap: 15px;
+  padding: 12px 16px;
   border-radius: 50px;
   background: #32323b;
-  padding-right: 80px;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .footer-email-input:hover {
@@ -41,6 +43,8 @@
   color: #a0a0a0;
   font-family: Outfit, sans-serif;
   font-size: 18px;
+  flex: 1;
+  min-width: 0;
 }
 
 .footer-subscribe {

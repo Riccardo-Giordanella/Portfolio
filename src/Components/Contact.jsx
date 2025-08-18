@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Contact.css";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Hourglass } from "ldrs/react";
 import "ldrs/react/Hourglass.css";
@@ -69,17 +69,24 @@ export default function Contact() {
               <a
                 href="https://www.linkedin.com/in/riccardo-giordanella-173195197/"
                 target="_blank"
+                title="LinkedIn"
+                className="anchor-link-contact"
               >
                 My linkedin profile
-              <img src={white_arrow} alt="white arrow" />
               </a>
+              <img src={white_arrow} alt="white arrow" />
             </div>
             <div className="contact-detail">
               <i className="fa-brands fa-square-github" />
-              <a href="https://github.com/Riccardo-Giordanella" target="_blank">
+              <a
+                href="https://github.com/Riccardo-Giordanella"
+                target="_blank"
+                title="Github"
+                className="anchor-link-contact"
+              >
                 My github profile
-              <img src={white_arrow} alt="white arrow" />
               </a>
+              <img src={white_arrow} alt="white arrow" />
             </div>
             <div className="contact-detail">
               <i className="fa-solid fa-location-dot"></i>{" "}
@@ -124,7 +131,7 @@ export default function Contact() {
               <>
                 {result}{" "}
                 <Hourglass
-                  size="40"
+                  size="25"
                   bgOpacity="0.1"
                   speed="1.75"
                   color="white"
@@ -136,7 +143,6 @@ export default function Contact() {
           </button>
         </form>
       </div>
-      <ToastContainer position="top-right" autoClose={3000} />
     </section>
   );
 }

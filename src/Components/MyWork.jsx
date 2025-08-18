@@ -21,7 +21,7 @@ export default function MyWork() {
                 {work.github && (
                   <a href={work.github} target="_blank" rel="noopener noreferrer">
                     <div className="circle" title="GitHub">
-                      <i class="fa-brands fa-github fa-lg"></i>
+                      <i className="fa-brands fa-github fa-lg"></i>
                     </div>
                   </a>
                 )}

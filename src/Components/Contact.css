@@ -2,12 +2,40 @@
   box-sizing: border-box;
 }
 
-a{
-  color: inherit;
+a > img {
+  margin-left: 10px;
 }
 
-a>img{
-  margin-left: 10px;
+.anchor-link-contact {
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.anchor-link-contact::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, #df8908 0%, #b415ff 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.anchor-link-contact:hover::after {
+  transform: scaleX(1);
+}
+
+.anchor-link-contact:hover {
+  background: linear-gradient(270deg, #df8908 0%, #b415ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .contact {
@@ -95,6 +123,16 @@ a>img{
   font-size: 20px;
 }
 
+.contact-right input:focus,
+.contact-right textarea:focus {
+  border: 2px solid white;
+  background: linear-gradient(
+    270deg,
+    rgba(223, 137, 8, 0.3) 50.41%,
+    rgba(180, 21, 255, 0.3) 90.25%
+  );
+}
+
 .contact-right textarea {
   width: 650px;
   border: none;
@@ -153,6 +191,9 @@ a>img{
   .contact-detail i {
     width: 25px;
   }
+  .contact-detail a {
+    font-size: 18px;
+  }
   .contact-right {
     width: 100%;
     max-width: 700px;
@@ -164,6 +205,7 @@ a>img{
     width: 100%;
     font-size: 20px;
   }
+
   .contact-right textarea {
     width: 95%;
     font-size: 20px;

@@ -5,7 +5,6 @@ export default function Footer() {
     <footer className="footer">
       <section className="footer-top">
         <div className="footer-top-left">
-          {/* img */}
           <p>
             I'm a Front/back end developer from Italy, with 2 years of
             experience

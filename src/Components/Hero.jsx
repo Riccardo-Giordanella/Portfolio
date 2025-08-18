@@ -3,6 +3,7 @@ import profile_pic from "../assets/riccardo_2.jpg";
 import "./Hero.css";
 import Typed from "typed.js";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import "../assets/bg-canvas.js"
 
 export default function Hero() {
   // Create reference to store the DOM element containing the animation
@@ -23,6 +24,7 @@ export default function Hero() {
   }, []);
   return (
     <header id="home" className="hero">
+      <canvas id="bgCanvas"></canvas>
       <img src={profile_pic} alt="Profile" className="profile-pic" />
       <h1>
         <span>I'm Riccardo Giordanella,</span>

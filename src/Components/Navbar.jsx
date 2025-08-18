@@ -1,7 +1,8 @@
 import "./Navbar.css";
 import logo from "../assets/riccardo.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import setupNavbarScroll from "../assets/navbarScroll.js";
 
 export default function Navbar() {
   const [menu, setMenu] = useState("home");
@@ -10,6 +11,10 @@ export default function Navbar() {
   const navItems = ["home", "about", "projects", "contact"];
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    setupNavbarScroll();
+  }, []);
 
   return (
     <nav className="navbar">

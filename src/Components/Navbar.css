@@ -3,6 +3,9 @@
   justify-content: space-between;
   align-items: center;
   margin: 20px 170px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
