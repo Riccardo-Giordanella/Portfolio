@@ -1,10 +1,9 @@
 export default function setupNavbarScroll() {
   const navbar = document.querySelector(".navbar");
   const navMenu = document.querySelector(".nav-menu");
-  const btnOpen = document.querySelector(".nav-mob-open");
   const SCROLL_THRESHOLD = 80;
 
-  // 🔧 Stili dinamici
+  // 🔧 Inietta stili dinamici
   const style = document.createElement("style");
   style.innerHTML = `
     .navbar {
@@ -66,12 +65,11 @@ export default function setupNavbarScroll() {
   `;
   document.head.appendChild(style);
 
-  // 🔼 Pulsante "↑ Top"
+  // 🔼 Bottone "↑ Top"
   const backToTopBtn = document.createElement("button");
   backToTopBtn.id = "back-to-top";
   backToTopBtn.textContent = "↑ Top";
   document.body.appendChild(backToTopBtn);
-
   backToTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
@@ -86,51 +84,81 @@ export default function setupNavbarScroll() {
     }
   }
 
-  // 🔁 Aggiorna stato navbar
+  // 🔁 Aggiorna stato navbar & hamburger
   function updateNavbarState() {
+    // ogni volta riprendi la reference al nuovo <i class="nav-mob-open">
+    const btnOpen = document.querySelector(".nav-mob-open");
     const isScrolled = window.scrollY > SCROLL_THRESHOLD;
     const isLargeScreen = window.innerWidth > 1024;
 
     if (isLargeScreen) {
+      // --- Desktop ---
       if (isScrolled) {
         navbar?.classList.add("compact");
 
-        if (!navMenu?.classList.contains("open")) {
-          navMenu?.classList.add("fade-hide");
+        if (!navMenu.classList.contains("open")) {
+          navMenu.classList.add("fade-hide");
           navMenu.style.pointerEvents = "none";
 
           btnOpen?.classList.add("fade-show");
-          btnOpen.style.pointerEvents = "auto";
-          btnOpen.style.display = "inline-block";
-          btnOpen.style.opacity = "1";
-          btnOpen.style.visibility = "visible";
+          btnOpen?.setAttribute(
+            "style",
+            "display:inline-block; opacity:1; visibility:visible; pointer-events:auto;"
+          );
         }
       } else {
         navbar?.classList.remove("compact");
 
-        navMenu?.classList.remove("fade-hide");
+        navMenu.classList.remove("fade-hide");
         navMenu.style.pointerEvents = "";
 
         btnOpen?.classList.remove("fade-show");
-        btnOpen.style.pointerEvents = "";
-        btnOpen.style.display = "none";
-        btnOpen.style.opacity = "0";
-        btnOpen.style.visibility = "hidden";
+        btnOpen?.setAttribute(
+          "style",
+          "display:none; opacity:0; visibility:hidden; pointer-events:none;"
+        );
       }
     } else {
-      // 👇 Su mobile: non toccare lo stile dell’icona hamburger
+      // --- Mobile ---
       navbar?.classList.remove("compact");
-      navMenu?.classList.remove("fade-hide");
+      navMenu.classList.remove("fade-hide");
       navMenu.style.pointerEvents = "";
+
+      if (!navMenu.classList.contains("open")) {
+        btnOpen?.classList.add("fade-show");
+        btnOpen?.setAttribute(
+          "style",
+          "display:inline-block; opacity:1; visibility:visible; pointer-events:auto;"
+        );
+      } else {
+        btnOpen?.classList.remove("fade-show");
+        btnOpen?.setAttribute(
+          "style",
+          "display:none; opacity:0; visibility:hidden; pointer-events:none;"
+        );
+      }
     }
 
     updateBackToTopVisibility();
   }
 
-  // 📡 Eventi scroll e resize
+  // 📡 Scroll e resize
   window.addEventListener("scroll", updateNavbarState, { passive: true });
   window.addEventListener("resize", updateNavbarState);
 
   // 🚀 Inizializzazione
   updateNavbarState();
+
+  // 🔄 Al click su hamburger, X o link, riallinea lo stato dopo il render di React
+  document.addEventListener("click", (e) => {
+    const target = /** @type {HTMLElement} */ (e.target);
+    if (
+      target.classList.contains("nav-mob-open") ||
+      target.classList.contains("nav-mob-close") ||
+      target.closest(".nav-menu li")
+    ) {
+      // 50ms di delay per far sì che React abbia già aggiornato isOpen → DOM
+      setTimeout(updateNavbarState, 50);
+    }
+  });
 }
