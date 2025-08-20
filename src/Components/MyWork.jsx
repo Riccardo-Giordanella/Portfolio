@@ -19,7 +19,11 @@ export default function MyWork() {
               <div className="titicon">
                 <h2>{work.w_name}</h2>
                 {work.github && (
-                  <a href={work.github} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={work.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <div className="circle" title="GitHub">
                       <i className="fa-brands fa-github fa-lg"></i>
                     </div>
