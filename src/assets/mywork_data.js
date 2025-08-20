@@ -3,6 +3,7 @@ import clickfood2 from "../assets/clickfood/clickfood2.png";
 import tictactoe1 from "./tictactoe/tictactoe1.png";
 import tictactoe2 from "./tictactoe/tictactoe2.png";
 import smartbook1 from "./smartbook/smartbook.png";
+import smartbook2 from "./smartbook/smartbook2.png";
 import portfolio1 from "./portfolio/portfolio.png";
 
 const mywork_data = [
@@ -21,7 +22,7 @@ const mywork_data = [
   {
     w_no: 3,
     w_name: "Smart Book",
-    w_img: [smartbook1],
+    w_img: [smartbook1, smartbook2],
     github: "https://github.com/Riccardo-Giordanella/SmartBook",
   },
   {
