@@ -20,7 +20,10 @@ Colori, tipografia e layout sono stati scelti per trasmettere professionalità e
 - ⚡ **Vite** – ambiente di sviluppo veloce  
 - 📜 **JavaScript (ES6+)** – logica e interattività  
 - 🎨 **CSS** – stile e animazioni  
-- 🧱 **HTML5** – struttura semantica
+- 🧱 **HTML5** – struttura semantica  
+- ✍️ **Typed.js** – effetto scrittura animata  
+- 📸 **react-modal-image** – visualizzazione immagini in full screen  
+- 🖼️ **Swiper** – slider moderno e touch-friendly
 
 ### 🧩 Struttura del Progetto
 
@@ -60,7 +63,10 @@ Colors, typography, and layout were carefully selected to convey professionalism
 - ⚡ **Vite** – fast development environment  
 - 📜 **JavaScript (ES6+)** – logic and interactivity  
 - 🎨 **CSS** – styling and animations  
-- 🧱 **HTML5** – semantic structure
+- 🧱 **HTML5** – semantic structure  
+- ✍️ **Typed.js** – animated typing effect  
+- 📸 **react-modal-image** – fullscreen image display  
+- 🖼️ **Swiper** – modern and touch-friendly slider
 
 ### 🧩 Project Structure
 
@@ -100,7 +106,10 @@ Les couleurs, la typographie et la mise en page ont été choisies pour transmet
 - ⚡ **Vite** – environnement de développement rapide  
 - 📜 **JavaScript (ES6+)** – logique et interactivité  
 - 🎨 **CSS** – style et animations  
-- 🧱 **HTML5** – structure sémantique
+- 🧱 **HTML5** – structure sémantique  
+- ✍️ **Typed.js** – effet de frappe animée  
+- 📸 **react-modal-image** – affichage des images en plein écran  
+- 🖼️ **Swiper** – slider moderne compatible tactile
 
 ### 🧩 Structure du Projet
 
@@ -140,7 +149,10 @@ Colores, tipografía y diseño fueron seleccionados para transmitir profesionali
 - ⚡ **Vite** – entorno de desarrollo rápido  
 - 📜 **JavaScript (ES6+)** – lógica e interactividad  
 - 🎨 **CSS** – estilo y animaciones  
-- 🧱 **HTML5** – estructura semántica
+- 🧱 **HTML5** – estructura semántica  
+- ✍️ **Typed.js** – efecto de escritura animada  
+- 📸 **react-modal-image** – visualización de imágenes a pantalla completa  
+- 🖼️ **Swiper** – slider moderno y adaptado al tacto
 
 ### 🧩 Estructura del Proyecto
 
@@ -180,7 +192,10 @@ Farben, Typografie und Layout wurden sorgfältig ausgewählt, um Professionalit�
 - ⚡ **Vite** – schnelle Entwicklungsumgebung  
 - 📜 **JavaScript (ES6+)** – Logik und Interaktivität  
 - 🎨 **CSS** – Styling und Animationen  
-- 🧱 **HTML5** – semantische Struktur
+- 🧱 **HTML5** – semantische Struktur  
+- ✍️ **Typed.js** – animierter Schreibeffekt  
+- 📸 **react-modal-image** – Bilder in Vollbild anzeigen  
+- 🖼️ **Swiper** – moderner, touchfreundlicher Slider
 
 ### 🧩 Projektstruktur
 
