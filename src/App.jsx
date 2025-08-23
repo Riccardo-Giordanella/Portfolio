@@ -22,18 +22,20 @@ export default function App() {
       <FadeInSection>
         <Hero />
       </FadeInSection>
-      <FadeInSection>
-        <About />
-      </FadeInSection>
-      <FadeInSection>
-        <Services />
-      </FadeInSection>
-      <FadeInSection>
-        <MyWork />
-      </FadeInSection>
-      <FadeInSection>
-        <Contact />
-      </FadeInSection>
+      <main role="main">
+        <FadeInSection>
+          <About />
+        </FadeInSection>
+        <FadeInSection>
+          <Services />
+        </FadeInSection>
+        <FadeInSection>
+          <MyWork />
+        </FadeInSection>
+        <FadeInSection>
+          <Contact />
+        </FadeInSection>
+      </main>
       <FadeInSection>
         <Footer />
       </FadeInSection>

@@ -8,7 +8,7 @@ export default function Navbar() {
   const [menu, setMenu] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = ["home", "about", "projects", "contact"];
+  const navItems = ["home", "about", "projects"];
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -17,7 +17,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" role="navigation">
       <img src={logo} alt="Logo" className="logo" />
 
       {/* Icona hamburger (mostrata solo se menu chiuso in mobile) */}

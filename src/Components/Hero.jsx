@@ -72,7 +72,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <header id="home" className="hero">
+    <header id="home" className="hero" role="banner">
       <canvas ref={canvasRef} id="bgCanvas"></canvas>
       <img src={profile_pic} alt="Profile" className="profile-pic" />
       <h1>

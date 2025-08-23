@@ -60,9 +60,11 @@
   .navbar {
     margin: 20px 50px;
     position: sticky;
-    background-color: #161513;
+    background-color: rgba(0, 0, 0, 0.5); /* Nero semi-trasparente */
     border-radius: 50px;
     width: 80%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .nav-connect {
