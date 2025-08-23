@@ -23,7 +23,9 @@ Colori, tipografia e layout sono stati scelti per trasmettere professionalità e
 - 🧱 **HTML5** – struttura semantica  
 - ✍️ **Typed.js** – effetto scrittura animata  
 - 📸 **react-modal-image** – visualizzazione immagini in full screen  
-- 🖼️ **Swiper** – slider moderno e touch-friendly
+- 🖼️ **Swiper** – slider moderno e touch-friendly  
+- ⏳ **ldrs** – animazioni di loading personalizzate (effetto clessidra)  
+- 🔔 **React-Toastify** – notifiche animate
 
 ### 🧩 Struttura del Progetto
 
@@ -66,7 +68,9 @@ Colors, typography, and layout were carefully selected to convey professionalism
 - 🧱 **HTML5** – semantic structure  
 - ✍️ **Typed.js** – animated typing effect  
 - 📸 **react-modal-image** – fullscreen image display  
-- 🖼️ **Swiper** – modern and touch-friendly slider
+- 🖼️ **Swiper** – modern and touch-friendly slider  
+- ⏳ **ldrs** – custom loading animations (hourglass effect)  
+- 🔔 **React-Toastify** – animated notifications
 
 ### 🧩 Project Structure
 
@@ -109,7 +113,9 @@ Les couleurs, la typographie et la mise en page ont été choisies pour transmet
 - 🧱 **HTML5** – structure sémantique  
 - ✍️ **Typed.js** – effet de frappe animée  
 - 📸 **react-modal-image** – affichage des images en plein écran  
-- 🖼️ **Swiper** – slider moderne compatible tactile
+- 🖼️ **Swiper** – slider moderne compatible tactile  
+- ⏳ **ldrs** – animations de chargement personnalisées (effet sablier)  
+- 🔔 **React-Toastify** – notifications animées
 
 ### 🧩 Structure du Projet
 
@@ -152,7 +158,9 @@ Colores, tipografía y diseño fueron seleccionados para transmitir profesionali
 - 🧱 **HTML5** – estructura semántica  
 - ✍️ **Typed.js** – efecto de escritura animada  
 - 📸 **react-modal-image** – visualización de imágenes a pantalla completa  
-- 🖼️ **Swiper** – slider moderno y adaptado al tacto
+- 🖼️ **Swiper** – slider moderno y adaptado al tacto  
+- ⏳ **ldrs** – animaciones de carga personalizadas (efecto reloj de arena)  
+- 🔔 **React-Toastify** – notificaciones animadas
 
 ### 🧩 Estructura del Proyecto
 
@@ -195,7 +203,9 @@ Farben, Typografie und Layout wurden sorgfältig ausgewählt, um Professionalit�
 - 🧱 **HTML5** – semantische Struktur  
 - ✍️ **Typed.js** – animierter Schreibeffekt  
 - 📸 **react-modal-image** – Bilder in Vollbild anzeigen  
-- 🖼️ **Swiper** – moderner, touchfreundlicher Slider
+- 🖼️ **Swiper** – moderner, touchfreundlicher Slider  
+- ⏳ **ldrs** – benutzerdefinierte Ladeanimationen (Sanduhr-Effekt)  
+- 🔔 **React-Toastify** – animierte Benachrichtigungen
 
 ### 🧩 Projektstruktur
 

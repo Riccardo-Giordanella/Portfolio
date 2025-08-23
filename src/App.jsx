@@ -8,6 +8,7 @@ import Footer from "./Components/Footer";
 import FadeInSection from "./Components/FadeInSection";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
 
 export default function App() {
   return (

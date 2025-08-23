@@ -4,7 +4,11 @@
   align-items: center;
   justify-content: center;
   gap: 80px;
-  margin: 80px 170px;
+  margin: 80px auto;           /* Centra orizzontalmente */
+  padding: 0 20px;             /* Aggiunge margine interno */
+  max-width: 1200px;           /* Limita larghezza massima */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .services-title {
@@ -34,6 +38,7 @@
   border: 2px solid white;
   transition: 0.4s;
   min-height: 350px;
+  width: 100%;
 }
 
 .services-format h3 {
@@ -59,9 +64,10 @@
 
 .services-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive */
   gap: 40px;
+  width: 100%;
+  box-sizing: border-box;
   margin-bottom: 80px;
 }
 
@@ -83,7 +89,8 @@
   .services {
     align-items: center;
     gap: 70px;
-    margin: 20px 70px;
+    margin: 20px auto;    /* ⬅️ questo centra come nel desktop */
+    padding: 0 20px;
   }
   .services-title h1 {
     font-size: 50px;
@@ -91,7 +98,7 @@
   }
   .services-format {
     gap: 20px;
-    padding: 32px;
+    padding: 20px;
   }
   .services-format h2 {
     font-size: 28px;
@@ -107,5 +114,6 @@
   .services-container {
     grid-template-columns: 1fr;
     gap: 30px;
+    margin: 0px 10px;
   }
 }

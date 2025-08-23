@@ -58,13 +58,13 @@
 
 @media (max-width: 1024px) {
   .navbar {
-    margin: 20px 50px;
+    margin: 20px 20px;
     position: sticky;
     background-color: rgba(0, 0, 0, 0.5); /* Nero semi-trasparente */
     border-radius: 50px;
     width: 80%;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); */
   }
 
   .nav-connect {
@@ -75,8 +75,8 @@
   .nav-mob-open {
     display: block !important;
     position: fixed;
-    right: 70px;
-    top: 40px;
+    right: 35%;
+    top: 6%;
     font-size: 24px;
     cursor: pointer;
     z-index: 1001;
