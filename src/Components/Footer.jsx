@@ -1,4 +1,6 @@
 import "./Footer.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return (
@@ -12,7 +14,7 @@ export default function Footer() {
         </div>
         <div className="footer-top-right">
           <div className="footer-email-input">
-            <i className="fa-solid fa-user"></i>
+            <FontAwesomeIcon icon={faUser} />
             <input type="email" placeholder="Enter your email" />
           </div>
           <div className="footer-subscribe">Subscribe</div>

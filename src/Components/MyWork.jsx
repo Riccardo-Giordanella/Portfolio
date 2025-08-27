@@ -8,6 +8,10 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
+// Sostituzione della cdn di FontAwesome con l'installazione tramite npm
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
 export default function MyWork() {
   const [isHovered, setIsHovered] = useState(false);
   const [modalImage, setModalImage] = useState(null);
@@ -50,13 +54,9 @@ export default function MyWork() {
             <div className="titicon">
               <h2>{work.w_name || "Untitled Project"}</h2>
               {work.github && (
-                <a
-                  href={work.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={work.github} target="_blank" rel="noopener noreferrer">
                   <div className="circle" title="GitHub">
-                    <i className="fa-brands fa-github fa-lg"></i>
+                    <FontAwesomeIcon icon={faGithub} size="lg" />
                   </div>
                 </a>
               )}

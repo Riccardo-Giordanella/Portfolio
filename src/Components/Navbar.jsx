@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import setupNavbarScroll from "../assets/navbarScroll.js";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+
 export default function Navbar() {
   const [menu, setMenu] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
@@ -22,8 +25,9 @@ export default function Navbar() {
 
       {/* Icona hamburger (mostrata solo se menu chiuso in mobile) */}
       {!isOpen && (
-        <i
-          className="fa-solid fa-bars nav-mob-open"
+        <FontAwesomeIcon
+          icon={faBars}
+          className="nav-mob-open"
           style={{ color: "#ffffff" }}
           onClick={toggleMenu}
         />
@@ -32,11 +36,11 @@ export default function Navbar() {
       <ul className={`nav-menu ${isOpen ? "open" : ""}`}>
         {/* Icona chiudi (mostrata solo se menu aperto) */}
         {isOpen && (
-          <i
-            className="fa-solid fa-xmark nav-mob-close"
+          <FontAwesomeIcon
+            icon={faXmark}
+            className="nav-mob-close"
             style={{ color: "#ffffff" }}
-            onClick={toggleMenu}
-          />
+            onClick={toggleMenu} />
         )}
 
         {navItems.map((item) => (

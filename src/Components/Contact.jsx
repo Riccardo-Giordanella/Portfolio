@@ -6,6 +6,12 @@ import { Hourglass } from "ldrs/react";
 import "ldrs/react/Hourglass.css";
 import white_arrow from "../assets/white_arrow.png";
 
+// FontAwesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+
 export default function Contact() {
   const [result, setResult] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -57,15 +63,8 @@ export default function Contact() {
             to connect and explore how we might work together.
           </p>
           <div className="contact-details">
-            {/* <div className="contact-detail">
-              <i className="fa-regular fa-envelope"></i>{" "}
-              <p>riccardogiordanella10@gmail.com</p>
-            </div>
             <div className="contact-detail">
-              <i className="fa-solid fa-phone"></i> <p>+39 0123456789</p>
-            </div> */}
-            <div className="contact-detail">
-              <i className="fa-brands fa-linkedin" />
+              <FontAwesomeIcon icon={faLinkedin} />
               <a
                 href="https://www.linkedin.com/in/riccardo-giordanella-173195197/"
                 target="_blank"
@@ -77,7 +76,7 @@ export default function Contact() {
               <img src={white_arrow} alt="white arrow" />
             </div>
             <div className="contact-detail">
-              <i className="fa-brands fa-square-github" />
+              <FontAwesomeIcon icon={faGithub} />
               <a
                 href="https://github.com/Riccardo-Giordanella"
                 target="_blank"
@@ -89,7 +88,7 @@ export default function Contact() {
               <img src={white_arrow} alt="white arrow" />
             </div>
             <div className="contact-detail">
-              <i className="fa-solid fa-location-dot"></i>{" "}
+              <FontAwesomeIcon icon={faLocationDot} />{" "}
               <p>Italy, Vittoria(RG) 97019</p>
             </div>
           </div>
