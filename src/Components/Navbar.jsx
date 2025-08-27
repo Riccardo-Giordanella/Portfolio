@@ -8,7 +8,7 @@ export default function Navbar() {
   const [menu, setMenu] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = ["home", "about", "projects"];
+  const navItems = ["home", "about", "services", "projects"];
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
