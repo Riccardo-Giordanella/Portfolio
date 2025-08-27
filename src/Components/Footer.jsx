@@ -1,6 +1,7 @@
 import "./Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 export default function Footer() {
   return (
@@ -27,8 +28,7 @@ export default function Footer() {
         </p>
         <div className="footer-bottom-right">
           <p>Term of services</p>
-          <p>Privacy policy</p>
-          <p>Connect with me</p>
+          <AnchorLink href="#contact">Connect with me</AnchorLink>
         </div>
       </section>
     </footer>

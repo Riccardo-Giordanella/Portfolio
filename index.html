@@ -11,36 +11,39 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <div id="root"></div>
-    <script
-      type="text/javascript"
-      src="https://embeds.iubenda.com/widgets/5c313fd4-893a-46dc-b9b3-dc1995676060.js"
-    ></script>
-    <a
-      href="https://www.iubenda.com/privacy-policy/95604927"
-      class="iubenda-black iubenda-noiframe iubenda-embed iubenda-noiframe"
-      title="Privacy Policy "
-      >Privacy Policy</a
-    >
-    <script type="text/javascript">
-      (function (w, d) {
-        var loader = function () {
-          var s = d.createElement("script"),
-            tag = d.getElementsByTagName("script")[0];
-          s.src = "https://cdn.iubenda.com/iubenda.js";
-          tag.parentNode.insertBefore(s, tag);
-        };
-        if (w.addEventListener) {
-          w.addEventListener("load", loader, false);
-        } else if (w.attachEvent) {
-          w.attachEvent("onload", loader);
-        } else {
-          w.onload = loader;
-        }
-      })(window, document);
-    </script>
+    <div class="privacy">
+      <script
+        type="text/javascript"
+        src="https://embeds.iubenda.com/widgets/5c313fd4-893a-46dc-b9b3-dc1995676060.js"
+      ></script>
+      <a
+        href="https://www.iubenda.com/privacy-policy/95604927"
+        class="iubenda-black iubenda-noiframe iubenda-embed iubenda-noiframe"
+        title="Privacy Policy "
+        >Privacy Policy</a
+      >
+      <script type="text/javascript">
+        (function (w, d) {
+          var loader = function () {
+            var s = d.createElement("script"),
+              tag = d.getElementsByTagName("script")[0];
+            s.src = "https://cdn.iubenda.com/iubenda.js";
+            tag.parentNode.insertBefore(s, tag);
+          };
+          if (w.addEventListener) {
+            w.addEventListener("load", loader, false);
+          } else if (w.attachEvent) {
+            w.attachEvent("onload", loader);
+          } else {
+            w.onload = loader;
+          }
+        })(window, document);
+      </script>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
