@@ -5,6 +5,10 @@ import tictactoe2 from "./tictactoe/tictactoe2.png";
 import smartbook1 from "./smartbook/smartbook.png";
 import smartbook2 from "./smartbook/smartbook2.png";
 import portfolio1 from "./portfolio/portfolio.png";
+import rehacktor1 from "./rehacktor/rehacktor1.png";
+import rehacktor2 from "./rehacktor/rehacktor2.png";
+import rehacktor3 from "./rehacktor/rehacktor3.png";
+import rehacktor4 from "./rehacktor/rehacktor4.png";
 
 const mywork_data = [
   {
@@ -29,6 +33,12 @@ const mywork_data = [
     w_no: 4,
     w_name: "Portfolio",
     w_img: [portfolio1],
+  },
+  {
+    w_no: 5,
+    w_name: "Rehacktor",
+    w_img: [rehacktor1, rehacktor2, rehacktor3, rehacktor4],
+    github: "https://github.com/Riccardo-Giordanella/Portfolio",
   },
 ];
 
