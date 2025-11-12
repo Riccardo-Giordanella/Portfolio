@@ -38,7 +38,7 @@ const mywork_data = [
     w_no: 5,
     w_name: "Rehacktor",
     w_img: [rehacktor1, rehacktor2, rehacktor3, rehacktor4],
-    github: "https://github.com/Riccardo-Giordanella/Portfolio",
+    github: "https://github.com/Riccardo-Giordanella/Rehacktor",
   },
 ];
 
