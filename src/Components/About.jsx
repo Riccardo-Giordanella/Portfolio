@@ -3,13 +3,13 @@ import profile_img from "../assets/riccardo_2.jpg";
 import useCountUp from "../hooks/useCountUp";
 
 const skills = [
-  { name: "HTML & CSS",   level: 95 },
-  { name: "Javascript",   level: 90 },
-  { name: "React",        level: 75 },
-  { name: "Bootstrap",    level: 90 },
-  { name: "PHP",          level: 75 },
-  { name: "MySQL",        level: 78 },
-  { name: "Laravel",      level: 72 },
+  { name: "HTML & CSS",   level: 100 },
+  { name: "Javascript",   level: 95 },
+  { name: "React",        level: 90 },
+  { name: "Bootstrap",    level: 100 },
+  { name: "PHP",          level: 95 },
+  { name: "MySQL",        level: 90 },
+  { name: "Laravel",      level: 95 },
 ];
 
 function Stat({ target, suffix = "+", label }) {
