@@ -1,6 +1,5 @@
 import "./MyWork.css";
 import mywork_data from "../assets/mywork_data";
-import white_arrow from "../assets/white_arrow.png";
 import { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,7 +7,6 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-// Sostituzione della cdn di FontAwesome con l'installazione tramite npm
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
@@ -18,50 +16,100 @@ export default function MyWork() {
 
   return (
     <section id="projects" className="mywork">
-      <div className="mywork-title">
-        <h2>My latest work</h2>
+      <div className="mywork-header">
+        <span className="section-eyebrow">Selected work</span>
+        <h2 className="section-heading">
+          My latest <em>work</em>
+        </h2>
       </div>
 
       <div className="mywork-container">
         {mywork_data.map((work, index) => (
-          <div key={index} className="box">
-            {work.w_img.length > 1 ? (
-              <Swiper
-                modules={[Navigation]}
-                navigation
-                spaceBetween={10}
-                slidesPerView={1}
-                className="mywork-swiper"
-              >
-                {work.w_img.map((img, imgIndex) => (
-                  <SwiperSlide key={imgIndex}>
-                    <img
-                      src={img}
-                      alt={`Project ${index + 1} img ${imgIndex + 1}`}
-                      onClick={() => setModalImage(img)}
-                    />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            ) : (
-              <img
-                src={work.w_img[0]}
-                alt={`Project ${index + 1} image`}
-                onClick={() => setModalImage(work.w_img[0])}
-              />
-            )}
-
-            <div className="titicon">
-              <h2>{work.w_name || "Untitled Project"}</h2>
-              {work.github && (
-                <a href={work.github} target="_blank" rel="noopener noreferrer">
-                  <div className="circle" title="GitHub">
-                    <FontAwesomeIcon icon={faGithub} size="lg" />
-                  </div>
-                </a>
+          <article key={index} className="mywork-card">
+            <div className="mywork-card-media">
+              {work.w_img.length > 1 ? (
+                <Swiper
+                  modules={[Navigation]}
+                  navigation
+                  spaceBetween={10}
+                  slidesPerView={1}
+                  observer={true}
+                  observeParents={true}
+                  resizeObserver={true}
+                  className="mywork-swiper"
+                >
+                  {work.w_img.map((img, imgIndex) => (
+                    <SwiperSlide key={imgIndex}>
+                      <button
+                        type="button"
+                        className="mywork-img-btn"
+                        onClick={() => setModalImage(img)}
+                        aria-label={`Enlarge project ${index + 1} image ${imgIndex + 1}`}
+                      >
+                        <img
+                          src={img}
+                          alt={`${work.w_name || `Project ${index + 1}`} — image ${imgIndex + 1}`}
+                        />
+                        <span className="mywork-zoom" aria-hidden="true">
+                          ⤢
+                        </span>
+                      </button>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              ) : (
+                <button
+                  type="button"
+                  className="mywork-img-btn"
+                  onClick={() => setModalImage(work.w_img[0])}
+                  aria-label={`Enlarge ${work.w_name || `Project ${index + 1}`}`}
+                >
+                  <img
+                    src={work.w_img[0]}
+                    alt={`${work.w_name || `Project ${index + 1}`}`}
+                  />
+                  <span className="mywork-zoom" aria-hidden="true">
+                    ⤢
+                  </span>
+                </button>
               )}
             </div>
-          </div>
+
+            <div className="mywork-card-meta">
+              <div className="mywork-card-index">
+                0{index + 1} <span aria-hidden="true">/</span> 0{mywork_data.length}
+              </div>
+              <h3 className="mywork-card-title">
+                {work.w_name || "Untitled Project"}
+              </h3>
+              <div className="mywork-card-actions">
+                {work.github && (
+                  <a
+                    href={work.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mywork-link"
+                    title="View on GitHub"
+                  >
+                    <FontAwesomeIcon icon={faGithub} />
+                    <span>Code</span>
+                  </a>
+                )}
+                {work.live && (
+                  <a
+                    href={work.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mywork-link"
+                    title="View live"
+                  >
+                    <span aria-hidden="true">↗</span>
+                    <span>Live</span>
+                  </a>
+                )}
+              </div>
+            </div>
+          </article>
         ))}
       </div>
 
@@ -69,6 +117,8 @@ export default function MyWork() {
         <div
           className="custom-modal-overlay"
           onClick={() => setModalImage(null)}
+          role="dialog"
+          aria-modal="true"
         >
           <div
             className="custom-modal-content"
@@ -77,6 +127,7 @@ export default function MyWork() {
             <button
               className="custom-modal-close"
               onClick={() => setModalImage(null)}
+              aria-label="Close"
             >
               ×
             </button>
@@ -85,14 +136,17 @@ export default function MyWork() {
         </div>
       )}
 
-      <div
+      <button
+        type="button"
         className="mywork-showmore"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <p>{isHovered ? "Coming Soon" : "Show More"}</p>
-        <img src={white_arrow} alt="White arrow" />
-      </div>
+        <span>{isHovered ? "Coming Soon" : "Show More"}</span>
+        <span className="mywork-showmore-arrow" aria-hidden="true">
+          {isHovered ? "✦" : "→"}
+        </span>
+      </button>
     </section>
   );
 }

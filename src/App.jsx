@@ -16,13 +16,18 @@ export default function App() {
       <ToastContainer
         position="top-right"
         autoClose={3000}
-        style={{ zIndex: 999 }}
+        theme="dark"
+        toastStyle={{
+          background: "#1c1c26",
+          border: "1px solid rgba(255, 255, 255, 0.08)",
+          borderRadius: "14px",
+          fontFamily: "'Outfit', sans-serif",
+        }}
+        style={{ zIndex: 9999 }}
       />
 
       <Navbar />
-      <FadeInSection>
-        <Hero />
-      </FadeInSection>
+      <Hero />
       <main role="main">
         <FadeInSection>
           <About />

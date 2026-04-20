@@ -4,12 +4,9 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Hourglass } from "ldrs/react";
 import "ldrs/react/Hourglass.css";
-import white_arrow from "../assets/white_arrow.png";
 
-// FontAwesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 export default function Contact() {
@@ -29,7 +26,6 @@ export default function Contact() {
         method: "POST",
         body: formData,
       });
-
       const data = await response.json();
 
       if (data.success) {
@@ -51,76 +47,101 @@ export default function Contact() {
 
   return (
     <section id="contact" className="contact">
-      <div className="contact-title">
-        <h2>Get in touch</h2>
+      <div className="contact-header">
+        <span className="section-eyebrow">Contact</span>
+        <h2 className="section-heading">
+          Let's <em>build</em> something together
+        </h2>
       </div>
+
       <div className="contact-section">
         <div className="contact-left">
-          <h3>Let's talk</h3>
-          <p>
-            I'm currently available to take on new projects. If you’re looking
-            for a reliable developer to bring your ideas to life, I’d be happy
-            to connect and explore how we might work together.
+          <p className="contact-intro">
+            I'm currently <span className="contact-available">
+              <span className="contact-available-dot" />available
+            </span> to take on new projects. If you're looking for a reliable developer
+            to bring your ideas to life, I'd be happy to connect.
           </p>
-          <div className="contact-details">
-            <div className="contact-detail">
-              <FontAwesomeIcon icon={faLinkedin} />
+
+          <ul className="contact-details">
+            <li className="contact-detail">
+              <span className="contact-icon">
+                <FontAwesomeIcon icon={faLinkedin} />
+              </span>
               <a
                 href="https://www.linkedin.com/in/riccardo-giordanella-173195197/"
                 target="_blank"
-                title="LinkedIn"
+                rel="noopener noreferrer"
                 className="anchor-link-contact"
               >
-                My linkedin profile
+                <span className="contact-label">LinkedIn</span>
+                <span className="contact-value">My linkedin profile</span>
               </a>
-              <img src={white_arrow} alt="white arrow" />
-            </div>
-            <div className="contact-detail">
-              <FontAwesomeIcon icon={faGithub} />
+              <span className="contact-arrow" aria-hidden="true">↗</span>
+            </li>
+            <li className="contact-detail">
+              <span className="contact-icon">
+                <FontAwesomeIcon icon={faGithub} />
+              </span>
               <a
                 href="https://github.com/Riccardo-Giordanella"
                 target="_blank"
-                title="Github"
+                rel="noopener noreferrer"
                 className="anchor-link-contact"
               >
-                My github profile
+                <span className="contact-label">GitHub</span>
+                <span className="contact-value">My github profile</span>
               </a>
-              <img src={white_arrow} alt="white arrow" />
-            </div>
-            <div className="contact-detail">
-              <FontAwesomeIcon icon={faLocationDot} />{" "}
-              <p>Italy, Vittoria(RG) 97019</p>
-            </div>
-          </div>
+              <span className="contact-arrow" aria-hidden="true">↗</span>
+            </li>
+            <li className="contact-detail">
+              <span className="contact-icon">
+                <FontAwesomeIcon icon={faLocationDot} />
+              </span>
+              <div className="contact-static">
+                <span className="contact-label">Location</span>
+                <span className="contact-value">Italy, Vittoria (RG) 97019</span>
+              </div>
+            </li>
+          </ul>
         </div>
+
         <form onSubmit={onSubmit} className="contact-right">
-          <label htmlFor="name">Your Name</label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter your name"
-            id="name"
-            autoComplete="name"
-            required
-          />
-          <label htmlFor="email">Your Email</label>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            name="email"
-            id="email"
-            autoComplete="email"
-            required
-          />
-          <label htmlFor="message">Write your message here</label>
-          <textarea
-            name="message"
-            rows="8"
-            placeholder="Enter your message"
-            id="message"
-            autoComplete="message"
-            required
-          />
+          <div className="form-field">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              autoComplete="name"
+              required
+              placeholder=" "
+            />
+            <label htmlFor="name">Your name</label>
+          </div>
+
+          <div className="form-field">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              autoComplete="email"
+              required
+              placeholder=" "
+            />
+            <label htmlFor="email">Your email</label>
+          </div>
+
+          <div className="form-field">
+            <textarea
+              name="message"
+              id="message"
+              rows="6"
+              required
+              placeholder=" "
+            />
+            <label htmlFor="message">Your message</label>
+          </div>
+
           <button
             type="submit"
             className="contact-submit"
@@ -128,16 +149,14 @@ export default function Contact() {
           >
             {isSubmitting ? (
               <>
-                {result}{" "}
-                <Hourglass
-                  size="25"
-                  bgOpacity="0.1"
-                  speed="1.75"
-                  color="white"
-                />
+                <span>{result}</span>
+                <Hourglass size="20" bgOpacity="0.1" speed="1.75" color="#0d0d12" />
               </>
             ) : (
-              "Submit"
+              <>
+                <span>Send message</span>
+                <span className="contact-submit-arrow" aria-hidden="true">→</span>
+              </>
             )}
           </button>
         </form>
