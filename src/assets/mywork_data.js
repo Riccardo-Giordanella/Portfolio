@@ -1,5 +1,5 @@
 import clickfood1 from "./clickfood/clickfood1.png";
-import clickfood2 from "../assets/clickfood/clickfood2.png";
+import clickfood2 from "./clickfood/clickfood2.png";
 import tictactoe1 from "./tictactoe/tictactoe1.png";
 import tictactoe2 from "./tictactoe/tictactoe2.png";
 import smartbook1 from "./smartbook/smartbook.png";
@@ -9,6 +9,9 @@ import rehacktor1 from "./rehacktor/rehacktor1.png";
 import rehacktor2 from "./rehacktor/rehacktor2.png";
 import rehacktor3 from "./rehacktor/rehacktor3.png";
 import rehacktor4 from "./rehacktor/rehacktor4.png";
+import decagym1 from "./decagym/decagym1.png";
+import decagym2 from "./decagym/decagym2.png";
+import decagym3 from "./decagym/decagym3.png";
 
 const mywork_data = [
   {
@@ -40,6 +43,11 @@ const mywork_data = [
     w_img: [rehacktor1, rehacktor2, rehacktor3, rehacktor4],
     github: "https://github.com/Riccardo-Giordanella/Rehacktor",
   },
+  {
+    w_no: 6,
+    w_name: "Decagym",
+    w_img: [decagym1, decagym2, decagym3],
+  }
 ];
 
 export default mywork_data;
