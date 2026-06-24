@@ -11,7 +11,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function MyWork() {
-  const [isHovered, setIsHovered] = useState(false);
   const [modalImage, setModalImage] = useState(null);
 
   return (
@@ -49,6 +48,8 @@ export default function MyWork() {
                         <img
                           src={img}
                           alt={`${work.w_name || `Project ${index + 1}`} — image ${imgIndex + 1}`}
+                          loading="lazy"
+                          decoding="async"
                         />
                         <span className="mywork-zoom" aria-hidden="true">
                           ⤢
@@ -67,6 +68,8 @@ export default function MyWork() {
                   <img
                     src={work.w_img[0]}
                     alt={`${work.w_name || `Project ${index + 1}`}`}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <span className="mywork-zoom" aria-hidden="true">
                     ⤢
@@ -139,13 +142,12 @@ export default function MyWork() {
       <button
         type="button"
         className="mywork-showmore"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        disabled
+        aria-disabled="true"
+        title="More projects coming soon"
       >
-        <span>{isHovered ? "Coming Soon" : "Show More"}</span>
-        <span className="mywork-showmore-arrow" aria-hidden="true">
-          {isHovered ? "✦" : "→"}
-        </span>
+        <span>More coming soon</span>
+        <span className="mywork-showmore-arrow" aria-hidden="true">✦</span>
       </button>
     </section>
   );

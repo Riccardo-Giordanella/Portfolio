@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import profile_pic from "../assets/riccardo_2.jpg";
+import profile_pic from "../assets/riccardo_2.webp";
 import "./Hero.css";
 import Typed from "typed.js";
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -161,7 +161,7 @@ export default function Hero() {
             rel="noopener noreferrer"
           >
             <button className="btn-ghost">
-              <span>View my resume</span>
+              <span>View my LinkedIn</span>
               <span className="btn-arrow-up" aria-hidden="true">↗</span>
             </button>
           </a>

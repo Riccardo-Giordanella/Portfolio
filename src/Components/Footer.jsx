@@ -7,15 +7,41 @@ import { toast } from "react-toastify";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
     if (!email || !email.includes("@")) {
       toast.error("Please enter a valid email");
       return;
     }
-    toast.success("Thanks for subscribing!");
-    setEmail("");
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "d6e1f5d4-f185-4b6e-8abd-31f670ec2438",
+          subject: "New newsletter subscription",
+          email,
+          from_name: "Portfolio newsletter",
+        }),
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success("Thanks for subscribing!");
+        setEmail("");
+      } else {
+        toast.error("❌ " + (data.message || "Something went wrong. Try again."));
+      }
+    } catch (error) {
+      toast.error("❌ Network error. Please try again.");
+      console.error("Error while subscribing:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -48,8 +74,8 @@ export default function Footer() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <button type="submit" className="footer-subscribe">
-            Subscribe
+          <button type="submit" className="footer-subscribe" disabled={isSubmitting}>
+            {isSubmitting ? "Subscribing…" : "Subscribe"}
           </button>
         </form>
       </div>
@@ -61,7 +87,6 @@ export default function Footer() {
           © 2025 Riccardo Giordanella. Crafted with care.
         </p>
         <div className="footer-bottom-right">
-          <button type="button" className="footer-link">Terms of service</button>
           <AnchorLink href="#contact" className="footer-link">
             Connect with me
           </AnchorLink>

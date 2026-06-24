@@ -1,18 +1,21 @@
 import "./Navbar.css";
-import logo from "../assets/riccardo.png";
+import logo from "../assets/riccardo.webp";
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import useScrollSpy from "../hooks/useScrollSpy";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
+// Module-level so its identity is stable across renders (used as a hook dep).
+const navItems = ["home", "about", "services", "projects"];
+
 export default function Navbar() {
-  const [menu, setMenu] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const navItems = ["home", "about", "services", "projects"];
+  const active = useScrollSpy(navItems, 60);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -47,8 +50,7 @@ export default function Navbar() {
           {navItems.map((item) => (
             <li
               key={item}
-              className={menu === item ? "active" : ""}
-              onClick={() => setMenu(item)}
+              className={active === item ? "active" : ""}
             >
               <AnchorLink className="anchor-link" offset={60} href={`#${item}`}>
                 <span className="nav-index">0{navItems.indexOf(item) + 1}</span>
@@ -101,12 +103,9 @@ export default function Navbar() {
               {navItems.map((item, i) => (
                 <li
                   key={item}
-                  className={menu === item ? "active" : ""}
+                  className={active === item ? "active" : ""}
                   style={{ "--delay": `${i * 80}ms` }}
-                  onClick={() => {
-                    setMenu(item);
-                    setIsOpen(false);
-                  }}
+                  onClick={() => setIsOpen(false)}
                 >
                   <AnchorLink className="anchor-link" offset={60} href={`#${item}`}>
                     <span className="nav-index">0{navItems.indexOf(item) + 1}</span>

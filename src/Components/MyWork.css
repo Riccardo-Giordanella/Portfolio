@@ -178,10 +178,19 @@
   cursor: pointer;
 }
 
-.mywork-showmore:hover {
+.mywork-showmore:not(:disabled):hover {
   gap: 1.5rem;
   border-color: var(--amber);
   background: rgba(255, 184, 77, 0.08);
+}
+
+.mywork-showmore:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.mywork-showmore:disabled .mywork-showmore-arrow {
+  color: var(--amber);
 }
 
 .mywork-showmore-arrow {
@@ -189,7 +198,7 @@
   transition: transform 0.4s var(--ease-spring);
 }
 
-.mywork-showmore:hover .mywork-showmore-arrow {
+.mywork-showmore:not(:disabled):hover .mywork-showmore-arrow {
   transform: rotate(90deg) scale(1.2);
   color: var(--amber);
 }

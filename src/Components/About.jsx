@@ -1,12 +1,12 @@
 import "./About.css";
-import profile_img from "../assets/riccardo_2.jpg";
+import profile_img from "../assets/riccardo_2.webp";
 import useCountUp from "../hooks/useCountUp";
 
 const skills = [
   { name: "HTML & CSS",   level: 100 },
   { name: "Javascript",   level: 95 },
   { name: "React",        level: 90 },
-  { name: "Bootstrap",    level: 100 },
+  { name: "Bootstrap",    level: 90 },
   { name: "PHP",          level: 95 },
   { name: "MySQL",        level: 90 },
   { name: "Laravel",      level: 95 },
@@ -39,7 +39,7 @@ export default function About() {
         <div className="about-left">
           <div className="about-img-frame">
             <img src={profile_img} alt="Riccardo Giordanella portrait" />
-            <span className="about-img-tag">riccardo.jpg</span>
+            <span className="about-img-tag">riccardo.webp</span>
           </div>
         </div>
 
@@ -70,9 +70,9 @@ export default function About() {
       <div className="about-achievements">
         <Stat target={2} label="Years of experience" />
         <div className="about-stat-divider" />
-        <Stat target={10} label="Projects completed" />
+        <Stat target={12} label="Projects completed" />
         <div className="about-stat-divider" />
-        <Stat target={10} label="Happy clients" />
+        <Stat target={8} label="Happy clients" />
       </div>
     </section>
   );

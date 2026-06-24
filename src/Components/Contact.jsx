@@ -29,17 +29,17 @@ export default function Contact() {
       const data = await response.json();
 
       if (data.success) {
-        toast.success("✅ Messaggio inviato con successo!");
+        toast.success("✅ Message sent successfully!");
         setResult("Form Submitted Successfully");
         event.target.reset();
       } else {
-        toast.error("❌ Errore: " + data.message);
+        toast.error("❌ Error: " + data.message);
         setResult(data.message);
       }
     } catch (error) {
-      toast.error("❌ Errore di rete. Riprova.");
-      console.error("Errore durante l'invio:", error);
-      setResult("Invio fallito. Riprova.");
+      toast.error("❌ Network error. Please try again.");
+      console.error("Error while sending:", error);
+      setResult("Submission failed. Try again.");
     } finally {
       setIsSubmitting(false);
     }
