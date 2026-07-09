@@ -1,0 +1,46 @@
+/* Circular back-to-top, aligned with the dev-mode launcher (bottom-left) and
+   stacked just above it. */
+.back-to-top {
+  position: fixed;
+  left: clamp(1rem, 3vw, 2rem);
+  bottom: calc(clamp(1rem, 3vw, 2rem) + 64px);
+  z-index: 900;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elev-2);
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s var(--ease-spring), border-color 0.25s,
+    box-shadow 0.25s;
+}
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.back-to-top:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 30px rgba(0, 229, 199, 0.28);
+  transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: opacity 0.2s;
+    transform: none;
+  }
+  .back-to-top.visible {
+    transform: none;
+  }
+}

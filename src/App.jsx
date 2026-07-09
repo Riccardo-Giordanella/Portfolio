@@ -7,6 +7,7 @@ import MyWork from "./Components/MyWork";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import FadeInSection from "./Components/FadeInSection";
+import BackToTop from "./Components/BackToTop";
 import BootIntro from "./Components/CodeEditor/BootIntro";
 import useHashRoute from "./hooks/useHashRoute";
 import { prefersReducedMotion } from "./hooks/useTypewriter";
@@ -21,24 +22,11 @@ const CodeEditor = lazy(() => import("./Components/CodeEditor/CodeEditor"));
 export default function App() {
   const editor = useHashRoute("#editor");
 
-  // Cinematic boot intro plays once per session on first load, and is skipped
-  // for users who prefer reduced motion.
-  const [showIntro, setShowIntro] = useState(() => {
-    try {
-      return !sessionStorage.getItem("introSeen") && !prefersReducedMotion();
-    } catch {
-      return true;
-    }
-  });
+  // Cinematic boot intro plays on every load, and is skipped for users who
+  // prefer reduced motion.
+  const [showIntro, setShowIntro] = useState(() => !prefersReducedMotion());
 
-  const enterSite = () => {
-    try {
-      sessionStorage.setItem("introSeen", "1");
-    } catch {
-      /* ignore */
-    }
-    setShowIntro(false);
-  };
+  const enterSite = () => setShowIntro(false);
 
   return (
     <>
@@ -76,14 +64,17 @@ export default function App() {
       </FadeInSection>
 
       {!editor.active && !showIntro && (
-        <button
-          className="ide-launch"
-          onClick={editor.open}
-          aria-label="View portfolio source in editor mode"
-        >
-          <span className="ide-launch-glyph">&lt;/&gt;</span>
-          <span>dev mode</span>
-        </button>
+        <>
+          <BackToTop />
+          <button
+            className="ide-launch"
+            onClick={editor.open}
+            aria-label="View portfolio source in editor mode"
+          >
+            <span className="ide-launch-glyph">&lt;/&gt;</span>
+            <span>dev mode</span>
+          </button>
+        </>
       )}
 
       {editor.active && (
