@@ -105,6 +105,9 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: translateZ(30px);
+  /* Give descenders (g, p) room so the gradient isn't clipped. */
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
 }
 
 .services-format p {

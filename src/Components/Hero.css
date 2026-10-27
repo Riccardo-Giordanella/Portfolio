@@ -148,6 +148,10 @@
   -webkit-text-fill-color: transparent;
   font-style: italic;
   font-variation-settings: "wdth" 95;
+  /* Room for the italic descender/comma so the gradient isn't clipped;
+     negative margins cancel the padding so layout is unchanged. */
+  padding: 0.08em 0.1em 0.16em;
+  margin: -0.08em -0.1em -0.16em;
 }
 
 .hero-role {

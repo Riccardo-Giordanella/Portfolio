@@ -124,6 +124,9 @@
   transition: color 0.3s ease;
   font-family: var(--font-display);
   letter-spacing: -0.02em;
+  /* Room for descenders (e.g. "Decagym") so the hover gradient isn't clipped. */
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
 }
 
 .mywork-card:hover .mywork-card-title {

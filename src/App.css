@@ -45,4 +45,9 @@ main {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-variation-settings: "wdth" 90;
+  /* Expand the gradient paint-box so italic ascenders/descenders and the
+     slanted right edge aren't filled transparent (clipped) by the tight
+     line-height. Negative margins keep the layout unchanged. */
+  padding: 0.1em 0.14em 0.22em;
+  margin: 0 -0.14em;
 }

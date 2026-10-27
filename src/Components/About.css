@@ -119,6 +119,9 @@
   -webkit-text-fill-color: transparent;
   font-style: italic;
   font-weight: 500;
+  /* Keep the gradient on the italic edges (no transparent clipping). */
+  padding: 0.05em 0.12em 0.1em;
+  margin: 0 -0.12em;
 }
 
 /* Skills */
