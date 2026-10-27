@@ -1,6 +1,7 @@
 import "./MyWork.css";
 import mywork_data from "../assets/mywork_data";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -11,7 +12,39 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function MyWork() {
-  const [modalImage, setModalImage] = useState(null);
+  // modal holds the whole image set of a project + the current index,
+  // so the enlarged view can be browsed like the small slider.
+  const [modal, setModal] = useState(null);
+
+  const openModal = (images, index) => setModal({ images, index });
+  const closeModal = useCallback(() => setModal(null), []);
+
+  const showPrev = useCallback(
+    () =>
+      setModal((m) =>
+        m ? { ...m, index: (m.index - 1 + m.images.length) % m.images.length } : m
+      ),
+    []
+  );
+  const showNext = useCallback(
+    () =>
+      setModal((m) =>
+        m ? { ...m, index: (m.index + 1) % m.images.length } : m
+      ),
+    []
+  );
+
+  const modalOpen = modal !== null;
+  useEffect(() => {
+    if (!modalOpen) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") closeModal();
+      else if (e.key === "ArrowLeft") showPrev();
+      else if (e.key === "ArrowRight") showNext();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [modalOpen, closeModal, showPrev, showNext]);
 
   return (
     <section id="projects" className="mywork">
@@ -42,7 +75,7 @@ export default function MyWork() {
                       <button
                         type="button"
                         className="mywork-img-btn"
-                        onClick={() => setModalImage(img)}
+                        onClick={() => openModal(work.w_img, imgIndex)}
                         aria-label={`Enlarge project ${index + 1} image ${imgIndex + 1}`}
                       >
                         <img
@@ -62,7 +95,7 @@ export default function MyWork() {
                 <button
                   type="button"
                   className="mywork-img-btn"
-                  onClick={() => setModalImage(work.w_img[0])}
+                  onClick={() => openModal(work.w_img, 0)}
                   aria-label={`Enlarge ${work.w_name || `Project ${index + 1}`}`}
                 >
                   <img
@@ -116,10 +149,10 @@ export default function MyWork() {
         ))}
       </div>
 
-      {modalImage && (
+      {modal && createPortal(
         <div
           className="custom-modal-overlay"
-          onClick={() => setModalImage(null)}
+          onClick={closeModal}
           role="dialog"
           aria-modal="true"
         >
@@ -129,14 +162,44 @@ export default function MyWork() {
           >
             <button
               className="custom-modal-close"
-              onClick={() => setModalImage(null)}
+              onClick={closeModal}
               aria-label="Close"
             >
               ×
             </button>
-            <img src={modalImage} alt="Enlarged project" />
+
+            {modal.images.length > 1 && (
+              <button
+                className="custom-modal-nav custom-modal-nav-prev"
+                onClick={showPrev}
+                aria-label="Previous image"
+              >
+                ‹
+              </button>
+            )}
+
+            <img
+              src={modal.images[modal.index]}
+              alt={`Enlarged project — image ${modal.index + 1}`}
+            />
+
+            {modal.images.length > 1 && (
+              <>
+                <button
+                  className="custom-modal-nav custom-modal-nav-next"
+                  onClick={showNext}
+                  aria-label="Next image"
+                >
+                  ›
+                </button>
+                <span className="custom-modal-counter" aria-hidden="true">
+                  {modal.index + 1} / {modal.images.length}
+                </span>
+              </>
+            )}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       <button
